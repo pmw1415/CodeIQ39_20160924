@@ -48,16 +48,18 @@ namespace CodeIQ39_20160924
              * 自然数Nに対して、Nを逆に並べた数を足し続けると回文数になることがある。
              * これを25回繰り返しても回文数にならない最小のNを見つける。
              */
+            int loop;
             double number = 0, value = 0;
             bool result;
 
             Console.WriteLine("start");
             while (Math.Truncate(++number) < 10000.0)
             {
+                loop = 0;
                 value = number;
                 Console.WriteLine("自然数: " + value);
                 result = false;
-                for (int i = 0; i < 25; i++)
+                while (loop++ <= 25)
                 {
                     if (isAnagramNumber(value))
                     {
